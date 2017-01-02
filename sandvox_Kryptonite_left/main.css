@@ -1,0 +1,1112 @@
+@charset "UTF-8";
+
+/*
+   css Copyright © 2005-2012 Karelia Software. All rights reserved.
+   css released under Creative Commons License  - http://creativecommons.org/licenses/by-sa/2.5/
+   All associated graphics belong to their respective owners and are licensed separately.
+*/
+
+/* IE7 hacks */
+
+*:first-child+html .gridItem img {
+	position:relative;
+	top:0px;
+}
+
+*:first-child+html .gridItem h3 {
+	position:relative;
+	top:0px;
+}
+
+/* Navigation arrows */
+div.text-navigation { text-align:center; margin-bottom:1em;}
+div.text-navigation div { display:inline; margin:0px 0.5em; }
+.collection-navigation .disabled-navigation { text-indent:-5000px; }
+
+/* 2.0 wrap compatibility. 2.0-compatible designs can further adjust these if they need */
+.wide { display:block; }
+
+.narrow.left {   /* Some designs won't respect without !important */
+    float:left!important;
+    clear:left!important;
+}
+.narrow.right {
+    float:right!important;
+    clear:right!important;
+}
+
+.wide.left   .graphic, img.wide.left,   .wide.left video,   .wide.left audio   { display:block; margin-left:0px; margin-right:auto; }
+.wide.center .graphic, img.wide.center, .wide.center video, .wide.center audio { display:block; margin-left:auto; margin-right:auto; }
+.wide.right  .graphic, img.wide.right,  .wide.right video,  .wide.right audio  { display:block; margin-left:auto; margin-right:0px; }
+
+
+.ImageElement.left, .AudioElement.left { text-align:left; }
+.ImageElement.center, .AudioElement.center { text-align:center; }
+.ImageElement.right, .AudioElement.right { text-align:right; }
+
+/* Captions should align themselves with the graphic */
+.graphic-container.left .caption { text-align:left; }
+.graphic-container.center .caption { text-align:center; }
+.graphic-container.right .caption { text-align:right; }
+
+/* Inline iframes need to display as a block to layout right */
+.graphic iframe { display:block; }
+
+/* Pagelet photo grids should be generally be auto width (some 1.x designs hardcoded an exact width) */
+.pagelet .photogrid-index { width:auto; }
+
+/* For content like amazon which forces white background. Design SHOULD set color for A tag and text color. */
+.whiteBackground
+{
+	background-color:white;
+}
+
+.article-info
+{
+	margin-bottom:1em;
+}
+
+/* Firefox reduce dotted lines on links */
+.photo-navigation a:focus, .replaced a:focus {overflow:hidden;}
+
+/* Disqus correction to prevent overflow scroll bars in some designs */
+#dsq-content { overflow:hidden; }
+#dsq-content .dsq-auth-header { width: auto!important; }
+#dsq-content .dsq-by { margin: 4px 6px 0px 0px; }
+#dsq-content .dsq-by a, #dsq-content .dsq-by a:hover { border: 0px none; }
+#dsq-content h3 { margin:0px; }
+
+/* Site menus. Don't wrap the top level items, and wrap sub-menu items normaly. */
+#sitemenu-content ul li span.in { white-space:nowrap;}
+* html #sitemenu-content ul li span.in {white-space: normal}
+*:first-child+html #sitemenu-content ul li span.in {white-space: normal}
+#sitemenu-content ul ul li span.in {white-space: normal}
+#sitemenu-content span.in { position: relative; }
+
+body { word-wrap:break-word; }
+
+/* Make sure scaled-down images look good in IE */
+img { -ms-interpolation-mode: bicubic; }
+
+.pagelet {overflow:visible !important;}  .pagelet-body {overflow:visible !important;}  #sidebar {overflow:visible !important;}  #sidebar-container {overflow:visible !important;}  #sidebar-content {overflow:visible !important;} div.callout-content {overflow:visible !important;}
+
+/* MODIFIED, BASED ON THE FOLLOWING BASE CSS AND DEFAULT THEME
+*/
+/*
+ * jQuery Nivo Slider v3.2
+ * http://nivo.dev7studios.com
+ *
+ * Copyright 2012, Dev7studios
+ * Free to use and abuse under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+ 
+/* The Nivo Slider styles */
+.nivoSlider {
+	position:relative;
+	width:100%;
+	height:auto;
+	overflow: hidden;
+}
+.nivoSlider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+	max-width: none;
+}
+.nivo-main-image {
+	display: block !important;
+	position: relative !important; 
+	width: 100% !important;
+}
+
+/* If an image is wrapped in a link */
+.nivoSlider a.nivo-imageLink {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	border:0;
+	padding:0;
+	margin:0;
+	z-index:6;
+	display:none;
+	background:white; 
+	filter:alpha(opacity=0); 
+	opacity:0;
+}
+/* The slices and boxes in the Slider */
+.nivo-slice {
+	display:block;
+	position:absolute;
+	z-index:5;
+	height:100%;
+	top:0;
+}
+.nivo-box {
+	display:block;
+	position:absolute;
+	z-index:5;
+	overflow:hidden;
+}
+.nivo-box img { display:block; }
+
+/* Caption styles */
+.nivo-caption {
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	background:#000;
+	color:#fff;
+	width:100%;
+	z-index:8;
+	padding: 5px 10px;
+	opacity: 0.8;
+	overflow: hidden;
+	display: none;
+	-moz-opacity: 0.8;
+	filter:alpha(opacity=8);
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+.nivo-caption p {
+	padding:5px;
+	margin:0;
+}
+.nivo-caption a {
+	display:inline !important;
+}
+.nivo-html-caption {
+    display:none;
+}
+/* Direction nav styles (e.g. Next & Prev) */
+.nivo-directionNav a {
+	position:absolute;
+	top:45%;
+	z-index:9;
+	cursor:pointer;
+}
+.nivo-prevNav {
+	left:0px;
+}
+.nivo-nextNav {
+	right:0px;
+}
+/* Control nav styles (e.g. 1,2,3...) */
+.nivo-controlNav {
+	text-align:center;
+}
+.nivo-controlNav a {
+	cursor:pointer;
+}
+.nivo-controlNav a.active {
+	font-weight:bold;
+}
+
+/*
+Skin Name: Nivo Slider Default Theme
+Skin URI: http://nivo.dev7studios.com
+Description: The default skin for the Nivo Slider.
+Version: 1.3
+Author: Gilbert Pellegrom
+Author URI: http://dev7studios.com
+Supports Thumbs: true
+*/
+
+.nivoSlider {
+	position:relative;
+	background:#fff url(nivo-images/loading.gif) no-repeat 50% 50%;
+    margin-bottom:10px;
+	-webkit-box-shadow: 0px 1px 5px 0px rgb(128,128,128);
+	-webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 1px 5px 0px rgb(128,128,128);
+	-moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.5);
+	box-shadow: 0px 1px 5px 0px rgb(128,128,128);
+	box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.5);
+}
+.nivoSlider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+	display:none;
+	margin:0 !important;
+	border:none !important;
+	padding:0 !important;
+}
+.nivoSlider a {
+	border:0;
+	display:block;
+}
+
+.nivo-controlNav a {
+	margin:0 4px;
+}
+
+.nivo-dots .nivo-controlNav a {
+	display:inline-block;
+	width:16px;
+	height:16px;
+	background:url(nivo-images/bullets.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+	margin: 0 2px;
+}
+
+.nivo-directionNav a {
+	display:block;
+	width:30px;
+	height:30px;
+	background:url(nivo-images/arrows.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+	opacity: 0;
+	-webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+}
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 240dpi) {
+    .nivo-dots .nivo-controlNav a {
+        background:url(nivo-images/bullets@2x.png) no-repeat;
+		-moz-background-size: 16px 40px;
+		-o-background-size: 16px 40px;
+        -webkit-background-size: 16px 40px;
+		background-size: 16px 40px;
+    }
+	.nivo-directionNav a {
+		background:url(nivo-images/arrows@2x.png) no-repeat;
+		-moz-background-size: 60px 30px;
+		-o-background-size: 60px 30px;
+        -webkit-background-size: 60px 30px;
+		background-size: 60px 30px;
+	}
+}
+
+.nivoSlider:hover .nivo-directionNav a { opacity: 1; }
+
+a.nivo-nextNav {
+	background-position:-30px 0;
+	right:15px;
+}
+a.nivo-prevNav {
+	left:15px;
+}
+
+.nivo-dots .nivo-controlNav a.active {
+	background-position:0 -22px;
+}
+
+.nivo-caption {
+    font-family: Helvetica, Arial, sans-serif;
+}
+.nivo-caption a {
+    color:#fff;
+    border-bottom:1px dotted #fff;
+}
+.nivo-caption a:hover {
+    color:#fff;
+}
+
+.nivo-thumbs-enabled {
+	width: 100%;
+}
+.nivo-thumbs-enabled a {
+	width: auto;
+	height: auto;
+	background: none;
+	margin-bottom: 5px;
+}
+.nivo-thumbs-enabled img {
+	padding:0 !important; margin:0; background:none !important; border:none;
+}
+
+textarea.fullWidth, input.fullWidth, select.fullWidth {
+	width:96%;
+	margin:4px 0;
+}
+textarea.fullWidth, select.fullWidth {
+	margin: 4px 1px
+}
+
+form.contactElement input.submit {
+	width:auto;
+	display:block;
+	margin-left:auto;
+	margin-right:2%;
+}
+form.contactElement th {
+	text-align:right;
+	font-weight:normal;
+	width:25%;
+}
+
+.contactError { color:red; font-weight:bold; }
+
+/* Contact Element For IE 7 */
+*:first-child+html form.contactElement input.submit {
+	padding:0px 10%;
+	min-width: 0px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+form.contactElement p {
+	text-align: left;
+}
+
+.photogrid-index-bottom { clear:left; }
+
+/*
+	Based on ColorBox 1.3.19 example1.  Changes:
+		changed "colorbox/" to "colorbox/"
+		removed background:url line for #cboxOverlay
+        added color to #cboxError
+*/
+/*
+    ColorBox Core Style:
+    The following CSS is consistent between example themes and should not be altered.
+*/
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
+#cboxOverlay{position:fixed; width:100%; height:100%;}
+#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative;}
+#cboxLoadedContent{overflow:auto; -webkit-overflow-scrolling: touch;}
+#cboxTitle{margin:0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%; height:100%;}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
+.cboxPhoto{float:left; margin:auto; border:0; display:block; max-width:none;}
+.cboxIframe{width:100%; height:100%; display:block; border:0;}
+#colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box; -moz-box-sizing:content-box; -webkit-box-sizing:content-box;}
+
+/* 
+    User Style:
+    Change the following styles to modify the appearance of ColorBox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+#colorbox{}
+
+    #cboxTopLeft,#cboxTopRight,#cboxBottomLeft,#cboxBottomRight,#cboxMiddleLeft,#cboxMiddleRight{width:21px; height:21px; background:url(colorbox/controls.png) no-repeat}
+
+    #cboxTopLeft{background-position:-101px 0;}
+    #cboxTopRight{background-position:-130px 0;}
+    #cboxBottomLeft{background-position:-101px -29px;}
+    #cboxBottomRight{background-position:-130px -29px;}
+    #cboxMiddleLeft{background-position:left top; background-repeat:repeat-y;}
+    #cboxMiddleRight{background-position:right top; background-repeat:repeat-y;}
+
+    #cboxTopCenter{height:21px; background:url(colorbox/border.png) 0 0 repeat-x;}
+    #cboxBottomCenter{height:21px; background:url(colorbox/border.png) 0 -29px repeat-x;}
+    #cboxContent{background:#fff; overflow:hidden;}
+        .cboxIframe{background:#fff;}
+        #cboxError{padding:50px; border:1px solid #ccc;color:red;}
+        #cboxLoadedContent{margin-bottom:28px;}
+        #cboxTitle{position:absolute; bottom:4px; left:0; text-align:center; width:100%; color:#949494;}
+        #cboxCurrent{position:absolute; bottom:4px; left:58px; color:#949494;}
+        #cboxSlideshow{position:absolute; bottom:4px; right:30px; color:#0092ef;}
+            
+        #cboxPrevious,#cboxNext,#cboxClose{background:url(colorbox/controls.png) no-repeat; width:25px; height:25px; text-indent:-9999px;}
+            
+        #cboxPrevious{position:absolute; bottom:0; left:0; background-position:-75px 0;}
+        #cboxPrevious:hover{background-position:-75px -25px;}
+        #cboxNext{position:absolute; bottom:0; left:27px; background-position:-50px 0;}
+        #cboxNext:hover{background-position:-50px -25px;}
+        #cboxLoadingOverlay{background:url(colorbox/loading_background.png) no-repeat center center;}
+        #cboxLoadingGraphic{background:url(colorbox/loading.gif) no-repeat center center;}
+        #cboxClose{position:absolute; bottom:0; right:0; background-position:-25px 0;}
+        #cboxClose:hover{background-position:-25px -25px;}
+
+            
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 240dpi) {
+    #cboxTopLeft,#cboxTopRight,#cboxBottomLeft,#cboxBottomRight,#cboxMiddleLeft,#cboxMiddleRight,#cboxPrevious,#cboxNext,#cboxClose{
+        background-image:url(colorbox/controls@2x.png);
+        -moz-background-size: 176px 50px;;
+        -o-background-size: 176px 50px;;
+        -webkit-background-size: 176px 50px;;
+        background-size: 176px 50px;;
+    }
+}
+
+/*
+  The following fixes a problem where IE7 and IE8 replace a PNG's alpha transparency with a black fill
+  when an alpha filter (opacity change) is set on the element or ancestor element.  This style is not applied to or needed in IE9.
+  See: http://jacklmoore.com/notes/ie-transparency-problems/
+*/
+.cboxIE #cboxTopLeft,
+.cboxIE #cboxTopCenter,
+.cboxIE #cboxTopRight,
+.cboxIE #cboxBottomLeft,
+.cboxIE #cboxBottomCenter,
+.cboxIE #cboxBottomRight,
+.cboxIE #cboxMiddleLeft,
+.cboxIE #cboxMiddleRight {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);
+}
+
+/*
+  The following provides PNG transparency support for IE6
+  Feel free to remove this and the /ie6/ directory if you have dropped IE6 support.
+*/
+.cboxIE6 #cboxTopLeft{background:url(colorbox/ie6/borderTopLeft.png);}
+.cboxIE6 #cboxTopCenter{background:url(colorbox/ie6/borderTopCenter.png);}
+.cboxIE6 #cboxTopRight{background:url(colorbox/ie6/borderTopRight.png);}
+.cboxIE6 #cboxBottomLeft{background:url(colorbox/ie6/borderBottomLeft.png);}
+.cboxIE6 #cboxBottomCenter{background:url(colorbox/ie6/borderBottomCenter.png);}
+.cboxIE6 #cboxBottomRight{background:url(colorbox/ie6/borderBottomRight.png);}
+.cboxIE6 #cboxMiddleLeft{background:url(colorbox/ie6/borderMiddleLeft.png);}
+.cboxIE6 #cboxMiddleRight{background:url(colorbox/ie6/borderMiddleRight.png);}
+
+.cboxIE6 #cboxTopLeft,
+.cboxIE6 #cboxTopCenter,
+.cboxIE6 #cboxTopRight,
+.cboxIE6 #cboxBottomLeft,
+.cboxIE6 #cboxBottomCenter,
+.cboxIE6 #cboxBottomRight,
+.cboxIE6 #cboxMiddleLeft,
+.cboxIE6 #cboxMiddleRight {
+    _behavior: expression(this.src = this.src ? this.src : this.currentStyle.backgroundImage.split('"')[1], this.style.background = "none", this.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=" + this.src + ", sizingMethod='scale')");
+}
+
+/* ============================================ *
+   -- Kryptonite --
+   v1.0 (104)
+   A Design for Sandvox created by BehindTheRabbit
+   http://www.behindtherabbit.com/
+   ============================================ */
+
+
+/* ====================
+   COLORS
+   --------------------
+*/
+body, #page-container {background-color: #202020;}
+a:link, a:visited,a:hover, a:active {color:#31BEF2;}
+#title h1, #title h1 a {color:#EEE;}
+#title p {color:#CCC;}
+h2, .article h3 a, .article .article h2 a {color:#EEE;}
+.text-navigation a:hover, .text-navigation a:active {color:#31BEF2;}
+#main .gridItem h3 a {color:#999 !important;}
+#main .gridItem:hover h3 a {color:#31BEF2 !important;}
+form {background-color: #f5f5f5;}
+
+
+/* ====================
+   GENERAL
+   --------------------
+*/
+body {
+	margin:0; padding:0 0 20px 0; color:#ABABAB;
+	font-family:"Avenir-Light",Avenir,"Helvetica Neue",Calibri,Helvetica, Arial, sans-serif;
+	font-size:62.5%;
+}
+h1, h2, h3, h4,
+#title p,
+#sitemenu {
+	font-family:"Avenir-Light",Avenir,"Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Light", "Helvetica-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:normal;
+}
+a:link, a:visited {text-decoration:none;}
+a:hover, a:active {text-decoration:underline;}
+a.imageLink {text-decoration:none;}
+h2, h3, h4 {margin-top:0;}
+h2 {font-size:2.8em;}
+h3, .article .article h2 {font-size:2.4em;}
+h4 {font-size:1.6em;}
+img {border:none;}
+li li {font-size:1em !important;}
+
+
+.ImageElement, .center.VideoElement { text-align:center;}
+body.allow-sidebar #main img {max-width:100%; height:auto;}
+#googlemap img {max-width:none !important;}
+
+dl, dd {font-size:1.2em;}
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+.clear {clear: both; height: 0;}
+.hidden {display:none !important;}
+.right {margin-left:20px;}
+.left {margin-right:20px;}
+
+code, pre { padding: 0 3px 2px; font-family: Menlo,Monaco,"Courier New",monospace; font-size: 12px; color: #333333; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+code { padding: 3px 4px; color: #d14; background-color: #f7f7f9; border: 1px solid #e1e1e8; }
+pre { display: block; padding: 8.5px; margin: 0 0 9px; font-size: 12px; line-height: 18px; background-color: #f5f5f5; border: 1px solid #ccc; border: 1px solid rgba(0,0,0,0.15); -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; white-space: pre; white-space: pre-wrap; word-break: break-all; }
+pre code { padding: 0; background-color: transparent; }
+abbr {font-variant:small-caps;}
+cite {font-family:Georgia, Times, "Times New Roman", serif; font-style:italic; color:#999;}
+cite em {font-style:normal;}
+
+
+/* ====================
+   LAYOUT
+   --------------------
+*/
+#page-container {
+	width:960px; margin:0 auto;
+	border: 1px solid #000;
+	-webkit-box-shadow:0 2px 1px #222;
+		-moz-box-shadow:0 2px 1px #222;
+		box-shadow:0 2px 1px #222;
+}
+body.allow-sidebar #main {width:600px;}
+#main {padding:20px; min-height:300px;}
+#sidebar-container {
+	width:260px;
+	padding:20px;
+}
+#page-bottom {
+	clear:both;
+	border-top: 1px solid #333;
+	margin:30px 0;
+	padding:30px 10px 10px 10px;
+	text-align:center;
+	font-size:1.1em;
+}
+
+/* ====================
+   PAGE TOP & SITEMENU
+   --------------------
+*/
+body.has-custom-banner #title h1, body.has-custom-banner #title p {background-color:rgba(0,0,0,0.4);}
+#title {
+	height:280px; position:relative; border-bottom:1px solid #000;
+	margin-top:45px;
+}
+#title h1 {font-size:4.8em; margin:0; padding:10px 0 0 20px;}
+#title p {margin:0; padding:0 20px 5px 20px; font-size:1.4em; letter-spacing:0.1em;}
+#title h1 a {text-decoration:none;}
+#logo {
+	position:absolute;
+	right:20px;
+	top:20px;
+	z-index:2;
+}
+#sitemenu-container {
+	position:absolute; top:0; width:960px;
+	border-bottom:1px solid #000;
+	-webkit-box-shadow:0 1px 1px #000;
+		-moz-box-shadow:0 1px 1px #000;
+		box-shadow:0 1px 1px #000;
+}
+#sitemenu ul li {display:inline;}
+#sitemenu ul li .in {background-color:#202020;}
+#sitemenu-container {text-align:right; margin:0; padding:0; font-size:1.2em; height:45px;}
+#sitemenu ul li .in {line-height:45px; height:45px;	display:inline-block; padding:0 8px;}
+#sitemenu ul li ul li .in {height:auto !important; line-height:1.4em !important;}
+#sitemenu {margin:0; text-align:right;}
+#sitemenu a {color:#ABABAB; text-decoration:none !important; white-space:nowrap;}
+#sitemenu ul {margin:0;}
+#sitemenu li {padding:0; margin:0; list-style-type:none;}
+#sitemenu li li a {text-decoration:none; white-space:normal;}
+#sitemenu-content ul li span.in {white-space:normal;}
+#sitemenu ul {padding:0;}
+#sitemenu a .in:hover {
+	text-shadow:0 1px 2px #333;
+	color:#333;
+	background-color: #727272;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#727272), to(#aaacab));
+	background-image: -webkit-linear-gradient(top, #727272, #aaacab);
+	background-image: -moz-linear-gradient(top, #727272, #aaacab);
+	background-image: -o-linear-gradient(top, #727272, #aaacab);
+	background-image: -ms-linear-gradient(top, #727272, #aaacab);
+	background-image: linear-gradient(top, #727272, #aaacab);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#727272', EndColorStr='#aaacab');
+}
+
+/* 2nd level
+   -------------------- */
+.hasSubmenu ul {
+	top:31px !important;
+	-webkit-box-shadow:0 2px 2px #000 !important;
+		-moz-box-shadow:0 2px 2px #000 !important;
+		box-shadow:0 2px 2px #000 !important;
+	border:1px solid #454545 !important;
+}
+#sitemenu ul li ul li .in {display:block; padding:8px 4px 8px 8px !important; border-bottom:none !important;}
+#sitemenu ul li ul li .in:hover {}
+ul .submenu-indicator {background-image:url(images/chevron-down.png) !important; margin-left:5px;}
+
+/* 3rd level
+   -------------------- */
+.hasSubmenu ul li ul {
+	-webkit-box-shadow:0 2px 2px #000 !important;
+		-moz-box-shadow:0 2px 2px #000 !important;
+		box-shadow:0 2px 2px #000 !important;
+	border:1px solid #454545 !important;
+	top:5px !important;
+}
+#sitemenu li.currentPage {color:#999;}
+#sitemenu li.currentPage .in {}
+ul ul .submenu-indicator {background-image:url(images/chevron-right.png) !important; top:10px !important;}
+
+
+/* ====================
+   PAGELETS 
+   --------------------
+*/
+.pagelet {
+	margin:0 0 20px 0;
+	overflow:hidden; word-break:break-word;
+}
+.pagelet h4 {
+	padding:14px 0; border-bottom:1px solid #666;
+	font-weight:normal; letter-spacing:0.1em;
+}
+.pagelet p, .pagelet li {font-size:1.3em;}
+.pagelet li li {font-size:1em;}
+.pagelet p {margin-top:0;}
+.bordered {
+	border: 1px solid #666;
+	padding:0 15px 10px 15px;
+}
+.bordered.untitled {padding-top:14px;}
+.caption {
+	text-align:center;
+	padding:10px 20px;
+}
+.pagelet .rssBadge img {margin:0 5px 0 0;}
+
+/* Sidebar pagelets
+   --------------------
+*/
+#sidebar p, #sidebar li {line-height:1.6em;}
+
+/* Callout pagelets
+   --------------------
+*/
+.callout-container {
+	width:260px;
+	float:right;
+	margin-left:20px;
+}
+#main .pagelet h4 {text-align:center;}
+
+
+/* ====================
+   MAIN BODY 
+   --------------------
+*/
+#main p, #main li {
+	font-size:1.4em;
+	line-height:1.6em;
+}
+body.no-sidebar #main h2 {text-align:center;}
+.article .article {border-bottom:1px dashed #AAA;}
+.article .article.last-item {border-bottom:none;}
+.article h3, .article .article h2 {margin-top:20px;}
+
+/* Collection - template 3
+   --------------------
+*/
+.dli1 {width:100px;}
+.dli2 {width:25%; text-align:center;}
+.dli1, .dli2, .dli3, .dli4 {vertical-align:top;}
+.dli1, .dli2, .dli4 {padding-top:12px;}
+.dli2 h3 {font-size:1.4em; margin-top:0;}
+.dli3 {font-size:0.9em;}
+.dli4 .timestamp {color:#999; padding:0 0 0 12px; border:none;}
+.dli4 .article-info {margin-top:0; padding:0;}
+
+/* Collection - template 5
+   --------------------
+*/
+.article-thumbnail {margin-right:20px; float:left;}
+.article-thumbnail img {
+	border:1px solid #000;
+	-webkit-box-shadow:0 2px 2px #000;
+		-moz-box-shadow:0 2px 2px #000;
+		box-shadow:0 2px 2px #000;
+}
+
+/* Article bottom
+   --------------------
+*/
+.article-info {font-size:1.1em; margin-top:20px; padding:20px 0 10px 0; clear:both; text-align:right;}
+.continue-reading-link {margin-bottom:15px;}
+.continue-reading-link:before {content:"\21E2"; padding-right:5px; color:#454545;}
+.timestamp {margin-bottom:20px;}
+.timestamp .in, .timestamp a  {
+	color:#666; display:inline; padding:3px 8px;
+	-webkit-border-radius:15px;
+		-moz-border-radius:15px;
+		border-radius:15px;
+	border: 1px solid #666;}
+.timestamp a {text-decoration:none;}
+.timestamp a:hover {color:#999; text-decoration:none;}
+
+
+/* ====================
+   BLOCKQUOTES 
+   --------------------
+*/
+blockquote {
+	font-family:Georgia, Times, "Times New Roman", serif;
+	color:#999;
+	padding:0 40px 0 50px; margin:20px 0; min-height:27px;
+	background:url(images/quotes-open.png) 0 0 no-repeat, url(images/quotes-close.png) bottom right no-repeat;
+}
+
+
+/* ====================
+   NAVIGATION
+   --------------------
+*/
+
+/* Photo navigation
+   --------------------
+*/
+.photo-navigation {height:50px;}
+.photo-navigation .previous-page a,
+.photo-navigation .next-page a,
+.photo-navigation .collection-index a {
+	opacity:0.5;
+	display:block;
+	height:30px;
+	text-indent:-9999px;
+	overflow:hidden;
+	border:1px solid #202020;
+	-webkit-border-radius:5px;
+		-moz-border-radius:5px;
+		border-radius:5px;
+}
+.photo-navigation .previous-page a:hover,
+.photo-navigation .next-page a:hover,
+.photo-navigation .collection-index a:hover {
+	opacity:1;
+	-webkit-transition:all 0.2s ease;
+		-moz-transition:all 0.2s ease;
+		-ms-transition:all 0.2s ease;
+		transition:all 0.2s ease;
+}
+/* with no sidebar
+   .................... */
+.no-sidebar .photo-navigation .previous-page a {background:url(images/arrows.png) 142px -48px no-repeat #202020;}
+.no-sidebar .photo-navigation .next-page a {background:url(images/arrows.png) 142px 2px no-repeat #202020;}
+.no-sidebar .photo-navigation .collection-index a {background:url(images/arrows.png) 142px -94px no-repeat #202020;}
+.no-sidebar .photo-navigation .previous-page {width:306px; float:left;}
+.no-sidebar .photo-navigation .next-page {width:306px; float:right;}
+.no-sidebar .photo-navigation .collection-index {width:308px; float:left;}
+
+/* with sidebar
+   .................... */
+.allow-sidebar .photo-navigation .previous-page a {background:url(images/arrows.png) 87px -48px no-repeat #202020;}
+.allow-sidebar .photo-navigation .next-page a {background:url(images/arrows.png) 87px 2px no-repeat #202020;}
+.allow-sidebar .photo-navigation .collection-index a {background:url(images/arrows.png) 87px -94px no-repeat #202020;}
+.allow-sidebar .photo-navigation .previous-page {width:200px; float:left;}
+.allow-sidebar .photo-navigation .next-page {width:200px; float:right;}
+.allow-sidebar .photo-navigation .collection-index {width:200px; float:left;}
+
+/* Text navigation
+   --------------------
+*/
+.text-navigation {
+	font-size:1.2em;
+	border-bottom:3px double #666;
+}
+.text-navigation a:link, .text-navigation a:visited {color:#CCC;}
+.text-navigation .collection-index a:before {content:"\21A9"; padding-right:5px;}
+.text-navigation .previous-page,
+.text-navigation .next-page,
+.text-navigation .collection-index {display:block; text-align:right; margin:0;}
+
+/* ====================
+   GRID
+   --------------------
+*/
+body.no-sidebar #main .gridItem {width:200px; margin:21px 15px;}
+body.allow-sidebar #main .gridItem {width:176px; margin:21px 24px 25px 0;}
+#main .gridItem {float:left; position:relative; height:188px; overflow:hidden; word-break:break-word; text-align:center; padding: 4px 0;}
+#main .gridItem h3 {font-size:1.2em; line-height:1.2em; font-weight:normal; padding: 0 6px 0 6px; margin-top:10px;}
+#main .gridItem h3 a {display:block;}
+#main .gridItem img {
+	border:1px solid #000;
+	-webkit-box-shadow:0 2px 2px #000;
+		-moz-box-shadow:0 2px 2px #000;
+		box-shadow:0 2px 2px #000;
+}
+#main .gridItem:hover img {
+	-webkit-box-shadow:0 3px 6px #000;
+		-moz-box-shadow:0 3px 6px #000;
+		box-shadow:0 3px 6px #000;
+}
+#main .gridItem h3 a,
+#main .gridItem img,
+#main .gridItem:hover img,
+#main .gridItem:hover h3 a {
+	-webkit-transition:all 0.3s ease;
+		-moz-transition:all 0.3s ease;
+		-ms-transition:all 0.3s ease;
+		transition:all 0.3s ease;
+}
+.photogrid-index-bottom {clear:both;}
+
+#main .photogrid-index {
+	padding-top:40px;
+	background-color:#2E2E2E;
+	-webkit-box-shadow:0 2px 2px #000 inset;
+		-moz-box-shadow:0 2px 2px #000 inset;
+		box-shadow:0 2px 2px #000 inset;
+}
+
+/* Grid inside the sidebar
+   --------------------
+*/
+#sidebar .gridItem {
+	width:200px;
+	margin:0 auto 10px auto;
+	border: 1px solid #333;
+	-webkit-border-radius:10px;
+		-moz-border-radius:10px;
+		border-radius:10px;
+	padding:10px 0;
+	overflow:hidden; word-break:break-word;
+	text-align:center;
+}
+#sidebar .gridItem:hover {border: 1px solid #454545;}
+#sidebar .gridItem h3 {
+	font-size:1.1em;
+	line-height:1.2em; 
+	font-weight:normal; padding: 0 6px 0 6px;
+	margin-top:10px;
+}
+#sidebar .gridItem h3 a {display:block; color:#999 !important;}
+#sidebar .gridItem:hover h3 a {text-decoration:none;}
+#sidebar .gridItem:hover img {}
+#sidebar .gridItem:hover h3 a, #sidebar .gridItem:hover img {
+	-webkit-transition:all 0.3s ease;
+		-moz-transition:all 0.3s ease;
+		-ms-transition:all 0.3s ease;
+		transition:all 0.3s ease;
+}
+
+/* ====================
+   FORMS
+   --------------------
+*/
+form {
+	padding: 19px; margin-bottom: 20px; border: 1px solid #000;
+	color:#CCC;
+	background-color:#454545;
+	-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+		-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+label {cursor: pointer;}
+input, textarea, select {font-size:1.2em;}
+input[type=text], input[type=email], textarea {
+	padding: 4px; margin-bottom: 9px; border: 1px solid #ccc; color:#454545;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+		-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);	
+	-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+		-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+		-ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+		-o-transition: border linear 0.2s, box-shadow linear 0.2s;
+		transition: border linear 0.2s, box-shadow linear 0.2s;
+	border-radius: 3px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+}
+select {
+	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	max-width: 200px;
+	background-color: #ffffff;
+	height: 28px;
+	/* In IE7, the height of the select element cannot be changed by height, only font-size */
+	*margin-top: 4px;
+	/* For IE7, add top margin to align select with labels */
+	line-height: 28px;
+	display: inline-block;
+	padding: 4px;
+	margin-bottom: 9px;
+	color: #555555;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+	margin: 0;
+	vertical-align: middle;
+}
+input[type=submit] {
+	display: inline-block;
+	padding: 4px 10px 4px;
+	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	line-height: 1.4em;
+	color: #333333;
+	text-align: center;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	background-color: #fafafa;
+		background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(25%, #ffffff), to(#e6e6e6));
+		background-image: -webkit-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+		background-image: -moz-linear-gradient(top, #ffffff, #ffffff 25%, #e6e6e6);
+		background-image: -ms-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+		background-image: -o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+		background-image: linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+		background-repeat: no-repeat;
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+	border: 1px solid #ccc;
+	border-bottom-color: #bbb;
+	-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+		-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+	cursor: pointer;
+	*margin-left: .3em;
+}
+input[type=submit]:first-child {
+	*margin-left: 0;
+}
+input[type=submit]:hover {
+	color: #333333;
+	text-decoration: none;
+	background-color: #e6e6e6;
+	background-position: 0 -15px;
+	-webkit-transition: background-position 0.1s linear;
+		-moz-transition: background-position 0.1s linear;
+		-ms-transition: background-position 0.1s linear;
+		-o-transition: background-position 0.1s linear;
+		transition: background-position 0.1s linear;
+}
+input[type=submit]:focus {
+	outline: thin dotted;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}
+input[type=submit].active, input[type=submit]:active {
+	background-image: none;
+	-webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+		-moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+		box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+	background-color: #e6e6e6;
+	background-color: #d9d9d9 \9;
+	color: rgba(0, 0, 0, 0.5);
+	outline: 0;
+}
+form table {font-size:1.4em;}
+td[colspan="2"] {text-align:center;}
+#main input[type=text], #main input[type=email] {max-width:260px;}
+body.no-sidebar #main form {padding:19px 40px;}
+#sidebar form.labelsOnSide {font-size:0.8em !important;}
+
+/* ====================
+   SITEMAP
+   --------------------
+*/
+.wide .sitemap a,
+.wide .sitemap li > span {display:block; padding:10px; }
+.wide .sitemap .figure-content {padding:0 10px; margin:0;	border:1px solid #454545; -webkit-border-radius:10px; -moz-border-radius:10px; border-radius:5px;}
+.wide .sitemap .figure-content p {margin:5px 0;}
+.wide .sitemap ul {padding:5px 10px; list-style-type:none; -webkit-border-radius:10px; -moz-border-radius:10px; border-radius:5px;}
+.wide .sitemap li {
+	list-style-type:none; margin:5px; border:1px solid #454545;
+	-webkit-border-radius:10px; -moz-border-radius:10px; border-radius:5px;
+	-webkit-transition:all 0.3s ease;
+		-moz-transition:all 0.3s ease;
+		-ms-transition:all 0.3s ease;
+		transition:all 0.3s ease;
+}
+.wide .sitemap li:hover {
+	border:1px solid #777;
+	-webkit-transition:all 0.3s ease;
+		-moz-transition:all 0.3s ease;
+		-ms-transition:all 0.3s ease;
+		transition:all 0.3s ease;
+}
+
+/* ====================
+   WIDGETS
+   --------------------
+*/
+.flickr_badge_image {width:100px;}
+
+/* ====================
+   IE7 FIXES
+   --------------------
+*/
+*+html .hasSubmenu ul {top:45px !important;}
+*+html ul .submenu-indicator {width:20px !important;}
+*+html #title h1 {z-index:-2;}
+*+html #logo {z-index:-1;}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi) {
+/* ============================================ *
+  -- Kryptonite -- 
+  Retina-ready CSS
+  ============================================ */
+
+ul .submenu-indicator {
+	background-image:url(images/chevron-down@2x.png) !important;
+	background-size:13px 6px !important;
+}
+ul ul .submenu-indicator {
+	background-image:url(images/chevron-right@2x.png) !important;
+	background-size:6px 13px !important;
+}
+blockquote {
+	background-image:url(images/quotes-open@2x.png), url(images/quotes-close@2x.png);
+	background-size:34px 27px, 33px 27px;
+}
+.no-sidebar .photo-navigation .previous-page a {
+	background-image:url(images/arrows@2x.png);
+}
+.no-sidebar .photo-navigation .next-page a {
+	background-image:url(images/arrows@2x.png);
+}
+.no-sidebar .photo-navigation .collection-index a {
+	background-image:url(images/arrows@2x.png);
+}
+.allow-sidebar .photo-navigation .previous-page a {
+	background-image:url(images/arrows@2x.png);
+}
+.allow-sidebar .photo-navigation .next-page a {
+	background-image:url(images/arrows@2x.png);
+}
+.allow-sidebar .photo-navigation .collection-index a {
+	background-image:url(images/arrows@2x.png);
+}
+
+.no-sidebar .photo-navigation .previous-page a,
+.no-sidebar .photo-navigation .next-page a,
+.no-sidebar .photo-navigation .collection-index a,
+.allow-sidebar .photo-navigation .previous-page a,
+.allow-sidebar .photo-navigation .next-page a,
+.allow-sidebar .photo-navigation .collection-index a {
+	background-size:30px 120px;
+}
+}
+
+/* -------------------------------------------- *
+   -- Kryptonite --
+   -- Left Sidebar --
+   -------------------------------------------- */
+
+/* ====================
+   SIDEBAR
+   --------------------
+*/
+body.allow-sidebar #main {float:right;}
+#sidebar-container {float:left;}
+
+.callout-container, .graphic-container { clear:right; }
+
+body.has-custom-banner #title { background-image: url("banner.jpeg"); }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi) { body.has-custom-banner #title { background-image:url(banner_hr.jpeg); -moz-background-size:960px 280px; -o-background-size:960px 280px; -webkit-background-size:960px 280px; background-size:960px 280px; } }
+
