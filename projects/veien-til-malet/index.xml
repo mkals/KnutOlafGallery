@@ -2,15 +2,15 @@
 <rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
  	<channel>
 		<title>Det trygge rommet | Knut Olaf Kals</title>
-		<link>http://knutolaf.no/projects/veien-til-malet/</link>
+		<link>https://knutolaf.no/projects/veien-til-malet/</link>
 		<description></description>
 		<language>en</language>
-		<lastBuildDate>Sun, 05 Mar 2017 10:05:33 -0800</lastBuildDate>
+		<lastBuildDate>Sun, 05 Mar 2017 10:15:04 -0800</lastBuildDate>
 		<docs>http://blogs.law.harvard.edu/tech/rss</docs>
 		<generator>Sandvox 2.10.8</generator>
 		<item>
 			<title>Veien til målet - &quot;Det trygge rommet&quot;</title>
-			<link>http://knutolaf.no/projects/veien-til-malet/veien-til-malet---det-trygg.html</link>
+			<link>https://knutolaf.no/projects/veien-til-malet/veien-til-malet---det-trygg.html</link>
 			<description>
 				&lt;div class="article-summary"&gt;
 					&lt;div&gt;
@@ -19,8 +19,8 @@
 				&lt;/div&gt;
 			</description>
 			<pubDate>Thu, 13 Feb 2014 13:35:36 -0800</pubDate>
-			<guid>http://knutolaf.no/projects/veien-til-malet/veien-til-malet---det-trygg.html</guid>
-            <enclosure url="http://knutolaf.no/_Media/bilde-6_med.jpeg" length="1062081" type="image/jpeg"></enclosure>
+			<guid>https://knutolaf.no/projects/veien-til-malet/veien-til-malet---det-trygg.html</guid>
+            <enclosure url="https://knutolaf.no/_Media/bilde-6_med.jpeg" length="1062081" type="image/jpeg"></enclosure>
 			
 		</item>
  	</channel>

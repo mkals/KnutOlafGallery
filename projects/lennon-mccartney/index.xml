@@ -2,15 +2,15 @@
 <rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
  	<channel>
 		<title>Lennon-McCartney | Knut Olaf Kals</title>
-		<link>http://knutolaf.no/projects/lennon-mccartney/</link>
+		<link>https://knutolaf.no/projects/lennon-mccartney/</link>
 		<description></description>
 		<language>en</language>
-		<lastBuildDate>Sun, 05 Mar 2017 10:05:37 -0800</lastBuildDate>
+		<lastBuildDate>Sun, 05 Mar 2017 10:15:08 -0800</lastBuildDate>
 		<docs>http://blogs.law.harvard.edu/tech/rss</docs>
 		<generator>Sandvox 2.10.8</generator>
 		<item>
 			<title>Yesterday</title>
-			<link>http://knutolaf.no/projects/lennon-mccartney/yesterday.html</link>
+			<link>https://knutolaf.no/projects/lennon-mccartney/yesterday.html</link>
 			<description>
 				&lt;div class="article-summary"&gt;
 					&lt;div&gt;
@@ -19,13 +19,13 @@
 				&lt;/div&gt;
 			</description>
 			<pubDate>Tue, 24 Dec 2013 15:37:37 -0800</pubDate>
-			<guid>http://knutolaf.no/projects/lennon-mccartney/yesterday.html</guid>
-            <enclosure url="http://knutolaf.no/_Media/kals4512_med.jpeg" length="5835271" type="image/jpeg"></enclosure>
+			<guid>https://knutolaf.no/projects/lennon-mccartney/yesterday.html</guid>
+            <enclosure url="https://knutolaf.no/_Media/kals4512_med.jpeg" length="5835271" type="image/jpeg"></enclosure>
 			
 		</item>
 		<item>
 			<title>Let It Be</title>
-			<link>http://knutolaf.no/projects/lennon-mccartney/let-it-be.html</link>
+			<link>https://knutolaf.no/projects/lennon-mccartney/let-it-be.html</link>
 			<description>
 				&lt;div class="article-summary"&gt;
 					&lt;div&gt;
@@ -34,13 +34,13 @@
 				&lt;/div&gt;
 			</description>
 			<pubDate>Tue, 24 Dec 2013 15:37:37 -0800</pubDate>
-			<guid>http://knutolaf.no/projects/lennon-mccartney/let-it-be.html</guid>
-            <enclosure url="http://knutolaf.no/_Media/kals4511_med.jpeg" length="6111015" type="image/jpeg"></enclosure>
+			<guid>https://knutolaf.no/projects/lennon-mccartney/let-it-be.html</guid>
+            <enclosure url="https://knutolaf.no/_Media/kals4511_med.jpeg" length="6111015" type="image/jpeg"></enclosure>
 			
 		</item>
 		<item>
 			<title>Imagine</title>
-			<link>http://knutolaf.no/projects/lennon-mccartney/imagine.html</link>
+			<link>https://knutolaf.no/projects/lennon-mccartney/imagine.html</link>
 			<description>
 				&lt;div class="article-summary"&gt;
 					&lt;div&gt;
@@ -49,8 +49,8 @@
 				&lt;/div&gt;
 			</description>
 			<pubDate>Tue, 24 Dec 2013 15:37:37 -0800</pubDate>
-			<guid>http://knutolaf.no/projects/lennon-mccartney/imagine.html</guid>
-            <enclosure url="http://knutolaf.no/_Media/kals4510_med.jpeg" length="5182485" type="image/jpeg"></enclosure>
+			<guid>https://knutolaf.no/projects/lennon-mccartney/imagine.html</guid>
+            <enclosure url="https://knutolaf.no/_Media/kals4510_med.jpeg" length="5182485" type="image/jpeg"></enclosure>
 			
 		</item>
  	</channel>

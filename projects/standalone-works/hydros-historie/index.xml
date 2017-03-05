@@ -2,15 +2,15 @@
 <rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
  	<channel>
 		<title>Hydro’s history | Knut Olaf Kals</title>
-		<link>http://knutolaf.no/projects/standalone-works/hydros-historie/</link>
+		<link>https://knutolaf.no/projects/standalone-works/hydros-historie/</link>
 		<description></description>
 		<language>en</language>
-		<lastBuildDate>Sun, 05 Mar 2017 10:06:00 -0800</lastBuildDate>
+		<lastBuildDate>Sun, 05 Mar 2017 10:15:31 -0800</lastBuildDate>
 		<docs>http://blogs.law.harvard.edu/tech/rss</docs>
 		<generator>Sandvox 2.10.8</generator>
 		<item>
 			<title>Rjukanfossen</title>
-			<link>http://knutolaf.no/projects/standalone-works/hydros-historie/rjukanfossen.html</link>
+			<link>https://knutolaf.no/projects/standalone-works/hydros-historie/rjukanfossen.html</link>
 			<description>
 				&lt;div class="article-summary"&gt;
 					&lt;div&gt;
@@ -19,8 +19,8 @@
 				&lt;/div&gt;
 			</description>
 			<pubDate>Tue, 07 Jan 2014 13:51:20 -0800</pubDate>
-			<guid>http://knutolaf.no/projects/standalone-works/hydros-historie/rjukanfossen.html</guid>
-            <enclosure url="http://knutolaf.no/_Media/bilde-2_med.jpeg" length="1100813" type="image/jpeg"></enclosure>
+			<guid>https://knutolaf.no/projects/standalone-works/hydros-historie/rjukanfossen.html</guid>
+            <enclosure url="https://knutolaf.no/_Media/bilde-2_med.jpeg" length="1100813" type="image/jpeg"></enclosure>
 			
 		</item>
  	</channel>
